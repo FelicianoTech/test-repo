@@ -22,20 +22,7 @@ before:
     - make install
 
 homebrew_casks:
-  - name: wtfutil
-    homepage: 'https://wtfutil.com'
-    description: 'The personal information dashboard for your terminal.'
-    repository:
-      owner: wtfutil
-      name: homebrew-wtfutil
-    hooks:
-      post:
-        # This hook is needed until this binary is signed and notarized
-        install: |
-          if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
-            system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/wtfutil"]
-          end
-  - name: wtfutil
+  - name: test-repo
     homepage: 'https://wtfutil.com'
     description: 'The personal information dashboard for your terminal.'
     repository:
@@ -46,7 +33,7 @@ homebrew_casks:
         # This hook is needed until this binary is signed and notarized
         install: |
           if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
-            system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/wtfutil"]
+            system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/test-repo"]
           end
 
 announce:
