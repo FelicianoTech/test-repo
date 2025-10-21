@@ -20,26 +20,3 @@ builds:
 before:
   hooks:
     - make install
-
-homebrew_casks:
-  - name: test-repo
-    homepage: 'https://wtfutil.com'
-    description: 'The personal information dashboard for your terminal.'
-    repository:
-      owner: linodians
-      name: homebrew-tap
-    hooks:
-      post:
-        # This hook is needed until this binary is signed and notarized
-        install: |
-          if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
-            system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/test-repo"]
-          end
-
-announce:
-  mastodon:
-    enabled: true
-    server: "https://social.linodians.com"
-  bluesky:
-    enabled: true
-    username: "wtfutil.bsky.social"
