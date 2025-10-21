@@ -21,3 +21,4 @@ before:
 announce:
   discourse:
     enabled: true
+    server: "https://discuss.linodians.com"
