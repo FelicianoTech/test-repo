@@ -22,3 +22,4 @@ announce:
   discourse:
     enabled: true
     server: "https://discuss.linodians.com"
+    category_id: 4
