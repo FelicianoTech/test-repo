@@ -22,4 +22,5 @@ announce:
   discourse:
     enabled: true
     server: "https://discuss.linodians.com"
-    category_id: 4
+    category_id: 3
+    username: "FelicianoTech"
