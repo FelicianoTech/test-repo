@@ -17,3 +17,7 @@ builds:
 before:
   hooks:
     - make install
+
+announce:
+  discourse:
+    enabled: true
