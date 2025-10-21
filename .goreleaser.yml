@@ -10,11 +10,8 @@ archives:
 builds:
   - binary: wtfutil
     goos:
-      - darwin
       - linux
     goarch:
-      - amd64
-      - arm
       - arm64
 
 before:
